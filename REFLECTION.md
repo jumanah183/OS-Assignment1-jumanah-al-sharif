@@ -9,7 +9,7 @@ Answer the following questions about your learning experience. Each answer shoul
 
 **Your Answer:**
 
-[Write your answer here. Discuss specific concepts like thread creation, thread states, how threads execute concurrently, what surprised you, etc.]
+[learned how multithreading allows multiple processes to appear as if they are running at the same time through concurrency. I understood the importance of thread states (like Ready and Running) and how the scheduler manages transitions between them to ensure CPU efficiency.]
 
 ---
 
@@ -17,7 +17,7 @@ Answer the following questions about your learning experience. Each answer shoul
 
 **Your Answer:**
 
-[Describe the specific challenge. Was it understanding the code? Implementing a feature? Using Git? Explain what made it difficult and how it relates to the course concepts.]
+[The most challenging part was integrating the Priority system and Context Switch counter into the main simulation loop. It was tricky to ensure the logic didn't break the existing code and that all statistics were calculated accurately at the end]
 
 ---
 
@@ -25,7 +25,7 @@ Answer the following questions about your learning experience. Each answer shoul
 
 **Your Answer:**
 
-[Describe your problem-solving approach. Did you read documentation? Ask for help? Debug systematically? What resources did you use? What strategies worked?]
+[I overcame these challenges by testing the new features in a separate script before merging them. I also used a systematic debugging approach, checking the output logs at each step to verify that the scheduler was handling priorities and switches correctly.]
 
 ---
 
@@ -33,7 +33,7 @@ Answer the following questions about your learning experience. Each answer shoul
 
 **Your Answer:**
 
-[Give specific examples from real applications you use (web browsers, games, mobile apps, etc.). Explain why threads are useful in those scenarios. Connect to what you learned in this assignment.]
+[Multithreading is essential in modern apps like web browsers, where one thread handles the UI while another downloads data in the background. It's also vital in gaming for physics and graphics rendering to run concurrently, ensuring a smooth user experience without the app freezing.]
 
 ---
 
