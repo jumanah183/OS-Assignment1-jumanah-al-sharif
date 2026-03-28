@@ -11,7 +11,7 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Your Answer:**
 
-[Write your answer here. Consider: What is a process? What is a thread? How do they differ in terms of memory, resources, creation overhead? Why are threads more suitable for this simulation?]
+[process is an independent program execution with its own memory space, while a thread is a smaller unit of execution within a process that shares the same memory. In this assignment, we used threads because they are 'lightweight' and share the same resources (like processQueue and processMap), which makes communication between them faster and reduces the overhead compared to creating separate processes]
 
 ---
 
@@ -21,11 +21,11 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Your Answer:**
 
-[Write your answer here. Describe the specific behavior - where does the process go? When does it run again? Give an example from your actual program output showing a process that was re-queued.]
+["In Round-Robin scheduling, if a process doesn't finish within its timeQuantum, it's sent back to the queue. In my SchedulerSimulation.java (Line 267), I use addProcessToQueue to manage this flow]
 
 Example from my output:
 ```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
+[PaLooking at the terminal, process P1 has a Burst Time of 2408ms. Since my timeQuantum is set between 2000ms and 5000ms (Line 216), P1 might not finish in one turn. The table shows its Waiting Time is 31ms, which proves it was placed in the Ready Queue and had to wait for its turn to execute again."ste a relevant snippet from your program output here showing a process being re-queued]
 ```
 
 **Explanation of example:**
@@ -39,17 +39,17 @@ Example from my output:
 
 **Your Answer:**
 
-[Write your answer here. For each state, explain when P1 enters that state during the simulation. Use your understanding of the code to trace through the lifecycle.]
+[I implemented a priority system where each process gets a random priority between 1 and 5 (Line 260). Higher numbers mean higher importance. In my summary table, P7 has a Priority of 5, while P8 has a Priority of 2. This allows the scheduler to favor critical tasks, directly affecting their execution order and waiting times]
 
-1. **New**: [When is P1 in New state?]
+1. **New**: [When P1 is created as an object: new Process("P1", ...) (Line 264).]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [When P1 is added to the processQueue (Line 267) and waits for its turn.]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [When the scheduler starts the thread and it executes the run() method (Line 62)]
 
-4. **Waiting**: [When/why would P1 be Waiting?]
+4. **Waiting**: [When P1 calls Thread.sleep() (Line 78) to simulate processing time.]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [When the process finishes its work and its thread stops.]
 
 ---
 
@@ -59,31 +59,33 @@ Example from my output:
 
 **Your Answer:**
 
-### Example 1: [Name of application/scenario]
+### Example 1: [Web Server Handling Requests]
 
 **Description**: 
-[Describe the real-world scenario or application]
+[web server (like Apache or Nginx) uses Round-Robin to handle multiple incoming user requests. Each user request is assigned to a thread]
 
 **Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
+[It ensures fairness. No single user can 'hog' the server resources for too long. By giving each request a small time slice, the server stays responsive to all users simultaneously]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [Operating System Task Manager]
 
 **Description**: 
-[Describe the real-world scenario or application]
+[Modern Operating Systems (Windows or macOS) use Round-Robin to manage multiple background threads like system updates, antivirus scans, and UI rendering]
 
 **Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
+[It provides high predictability and responsiveness. It prevents background tasks (like a scan) from freezing the entire computer, allowing the user to continue interacting with the screen smoothly.]
 
 ---
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1. 
-2. 
-3. 
+1. Concurrency vs Parallelism: I understood how threads allow multiple tasks to share the same CPU core by switching quickly between them (Concurrency).
+2. Scheduling Overhead: I learned that features like "Context Switching" are necessary for multitasking but come with a performance cost that needs to be balanced.
+3. Resource Sharing: I understood how threads within the same process can communicate and share data structures like the processQueue much faster than independent processes.
 
 **Concepts I need to study more:**
+Deadlock Prevention: I want to learn more about how to prevent multiple threads from waiting for each other forever in more complex systems.
+• Synchronization Objects: I am curious about using "Semaphores" or "Locks" to ensure that shared data doesn't get corrupted when many threads access it at once.
 1. 
 2. 
