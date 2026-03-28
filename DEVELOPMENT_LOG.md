@@ -33,67 +33,66 @@ Document your development process as you work on the assignment. Add entries sho
 ## Your Development Log:
 
 ### Entry 1 - [Date and Time]
-**What I did**: 
+**What I did**:  Initial project setup and code review.
 
-**Details**: 
+**Details**: Understanding the base scheduler code and identifying where to add new features.
 
-**Challenges**: 
+**Challenges**: Getting familiar with the existing logic of the process simulation.
 
-**Solution**: 
+**Solution**: Drawing a flowchart of the process execution to visualize the flow.
 
-**Time spent**: 
+**Time spent**: 2 hours.
 
 ---
 
 ### Entry 2 - [Date and Time]
-**What I did**: 
+**What I did**: Implementing Feature 1 (Priority System).
 
-**Details**: 
+**Details**: Added a random priority generator (1-5) and updated the Process class.
 
-**Challenges**: 
+**Challenges**: The priority wasn't being correctly assigned to each process in the loop.
+**Solution**:  Verified the random seed and ensured the priority parameter is passed correctly to the constructor.
 
-**Solution**: 
-
-**Time spent**: 
+**Time spent**: 3.5 hours
 
 ---
 
 ### Entry 3 - [Date and Time]
-**What I did**: 
+**What I did**:  Implementing Feature 2 (Context Switch Tracking).
 
-**Details**: 
+**Details**:  Added a counter to track every time the CPU switches between processes.
 
-**Challenges**: 
+**Challenges**:  Deciding the exact point where the switch occurs to increment the counter correctly.
 
-**Solution**: 
+**Solution**:  Placed the counter increment inside the scheduler loop whenever a new process is loaded.
 
-**Time spent**: 
+**Time spent**: 2.5 hours
 
 ---
 
 ### Entry 4 - [Date and Time]
-**What I did**: 
+**What I did**: Integrating Feature 3 (Waiting Time Summary Table).
 
-**Details**: 
+**Details**:  Added the displayWaitingTimeSummary method to the main simulation flow to show each process's details.
 
-**Challenges**: 
+**Challenges**:  Ensuring that the waiting time for each process is captured correctly throughout the scheduling cycles.
 
-**Solution**: 
+**Solution**: Used a list to store the final state of each process and then passed it to the summary method for display.
 
-**Time spent**: 
+**Time spent**:  2 hours.
 
 ---
 
 ### Entry 5 - [Date and Time]
-**What I did**: 
+**What I did**: Developing and merging the custom features into the main project.
 
-**Details**: 
+**Details**:  I wrote the code for Priority and Context Switches in a separate test script first to ensure they worked, then I moved them into the main class.
 
-**Challenges**: 
+**Challenges**: Some variables didn't match the main class structure during the move.
 
-**Solution**: 
+**Solution**: Renamed and adjusted the variables to fit the main simulation logic perfectly.
 
-**Time spent**: 
+**Time spent**:  2.5 hours.
 
 ---
 
